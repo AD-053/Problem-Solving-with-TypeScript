@@ -33,3 +33,6 @@ function getPopularCourses(courses: Course[], minStudents: number): Course[] {
   );
 }
 
+function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][] {
+  return items.map((item) => item[key]);
+}
