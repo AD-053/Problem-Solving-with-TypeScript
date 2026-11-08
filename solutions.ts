@@ -20,3 +20,16 @@ function formatCoordinate(coordinate: readonly [number, number, string]): string
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   return arrays.flat();
 }
+
+interface Course {
+  title: string;
+  students: number;
+  isPublished: boolean;
+}
+
+function getPopularCourses(courses: Course[], minStudents: number): Course[] {
+  return courses.filter(
+    (course) => (course.isPublished) && (course.students >= minStudents)
+  );
+}
+
